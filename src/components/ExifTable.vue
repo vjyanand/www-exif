@@ -4,9 +4,11 @@ import { Tooltip } from 'flowbite';
 import { onMounted } from 'vue';
 import { ref } from 'vue'
 
-const editing_field = ref(null)
+const editing_object = ref(null)
 const pageStore = usePageStore()
 const result = pageStore.exif_data
+const new_value = ref(null)
+
 let exif = result["exif"];
 exif.unshift({ "label": "Mime", "value": result["mime"], "key": "mime", "typeName": "" })
 exif.unshift({ "label": "Pixel Height", "value": result["height"], "key": "pixel_height", "typeName": "" })
@@ -23,10 +25,12 @@ onMounted(() => {
 })
 
 function set_editing_field(field) {
-  editing_field.value = field
+  editing_object.value = field
+  new_value.value = field['value']
 }
-function update_field(field) {
 
+function update_field(field) {
+  console.log(field.key)
 }
 
 function delete_field(field) {
@@ -51,19 +55,25 @@ function delete_field(field) {
             <div class="tooltip-arrow" data-popper-arrow=""></div>
           </span>
         </td>
-        <template v-if="field.key !== editing_field">
-          <td>{{ field.value }}</td>
-          <td><img width="220" @click="set_editing_field(`${field.key}`)" src="/assets/img/edit-button.svg" /></td>
-        </template>
-        <template v-else>
-
-          <td><input type="text" v-bind:placeholder="field.value" v-bind:value="field.value"/></td>
+        <template v-if="editing_object && field.key === editing_object['key']">
+          <td>
+            <input type="text" v-bind:placeholder="field.value" v-model="new_value" />
+          </td>
           <td><span style="display: flex;justify-content: space-between;">
               <img width="22" @click="delete_field(`${field.key}`)" src="/assets/img/trash-button.svg" />
-              <img width="22" @click="update_field(`${field.key}`)" src="/assets/img/save-button.svg" />
+
+              <img style="background-color: grey;" v-if="editing_object['value'] === new_value" width="22"
+                src="/assets/img/save-button.svg" />
+              <img v-else width="22" style="background-color: white;" @click="update_field(field)"
+                src="/assets/img/save-button.svg" />
+
               <img width="22" @click="set_editing_field('')" src="/assets/img/cancel-button.svg" />
             </span>
           </td>
+        </template>
+        <template v-else>
+          <td>{{ field.value }}</td>
+          <td><img width="220" @click="set_editing_field(field)" src="/assets/img/edit-button.svg" /></td>
         </template>
       </tr>
     </template>

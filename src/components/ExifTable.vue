@@ -30,6 +30,7 @@ function set_editing_field(field) {
 }
 
 function update_field(field) {
+  console.log("update called")
   const payload = { type: "update", exif_key: field['key'], exif_value: new_value.value }
   console.log(payload)
   pageStore.postMessage(payload)

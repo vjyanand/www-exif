@@ -8,6 +8,9 @@ onmessage = async function (e) {
     case 'file':
       await exif_process(e.data.file)
       break;
+    case 'update':
+      await exif_update(e.data.exif_key, e.data.exif_value)
+      break;
     case 'delete':
       await exif_delete(e.data.exif_key)
       break;
@@ -24,6 +27,10 @@ onmessage = async function (e) {
     default:
       console.log("default - worker")
   }
+}
+const exif_update = async function (key, value) {
+  let result = exif_parser.exif_update(key, value)
+  postMessage({ type: 'update', data: result })
 }
 
 const exif_delete_all = async function (key) {

@@ -4,7 +4,7 @@ import { Tooltip } from 'flowbite';
 import { onMounted } from 'vue';
 import { ref } from 'vue'
 
-const editing_object = ref(null)
+
 const pageStore = usePageStore()
 const result = pageStore.exif_data
 const new_value = ref(null)
@@ -13,7 +13,7 @@ let exif = result["exif"];
 exif.unshift({ "label": "Mime", "value": result["mime"], "key": "mime", "typeName": "" })
 exif.unshift({ "label": "Pixel Height", "value": result["height"], "key": "pixel_height", "typeName": "" })
 exif.unshift({ "label": "Pixel Width", "value": result["width"], "key": "pixel_width", "typeName": "" })
-exif.unshift({ "label": "Byte Order", "value": (result["byte_order"] == 1 ? "littleEndian" : "bigEndian"), "key": "byte_order", "typeName": "" })
+exif.unshift({ "label": "Byte Order", "value": (result["byte_order"] === 1 ? "littleEndian" : "bigEndian"), "key": "byte_order", "typeName": "" })
 onMounted(() => {
   let tooltips = document.getElementsByClassName("tooltip")
   const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
@@ -25,12 +25,14 @@ onMounted(() => {
 })
 
 function set_editing_field(field) {
-  editing_object.value = field
+  pageStore.editing_object = field
   new_value.value = field['value']
 }
 
 function update_field(field) {
-  console.log(field.key)
+  const payload = { type: "update", exif_key: field['key'], exif_value: new_value.value }
+  console.log(payload)
+  pageStore.postMessage(payload)
 }
 
 function delete_field(field) {
@@ -55,14 +57,14 @@ function delete_field(field) {
             <div class="tooltip-arrow" data-popper-arrow=""></div>
           </span>
         </td>
-        <template v-if="editing_object && field.key === editing_object['key']">
+        <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
           <td>
             <input type="text" v-bind:placeholder="field.value" v-model="new_value" />
           </td>
           <td><span style="display: flex;justify-content: space-between;">
               <img width="22" @click="delete_field(`${field.key}`)" src="/assets/img/trash-button.svg" />
 
-              <img style="background-color: grey;" v-if="editing_object['value'] === new_value" width="22"
+              <img style="background-color: grey;" v-if="pageStore.editing_object['value'] === new_value" width="22"
                 src="/assets/img/save-button.svg" />
               <img v-else width="22" style="background-color: white;" @click="update_field(field)"
                 src="/assets/img/save-button.svg" />

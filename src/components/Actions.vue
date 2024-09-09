@@ -17,6 +17,16 @@ pageStore.web_worker.onmessage = function (e) {
       pageStore.setTableData(exif_data)
       pageStore.image_name = result.image_name
       break
+    case 'update':
+      let result_update = JSON.parse(result.data)
+      if (result_update['success']) {
+        if (pageStore.exif_changed === false) {
+          pageStore.exif_changed = true
+        }
+        pageStore.update_exif_data(result_update['key'],result_update['value']);
+      }
+      console.log(result_update)
+      break
     case 'delete':
       let payload = JSON.parse(result.data)
       if (payload['success']) {

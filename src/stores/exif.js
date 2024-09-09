@@ -9,6 +9,7 @@ export const usePageStore = defineStore('exif', () => {
   const exif_changed = ref(false)
   const exif_data = ref(null)
   const toast_timer = ref(null)
+  const editing_object = ref(null)
 
   function setWorker(worker) {
     web_worker.value = worker
@@ -31,6 +32,14 @@ export const usePageStore = defineStore('exif', () => {
     index !== -1 && exif_data.value.exif.splice(index, 1)
   }
 
+  function update_exif_data(key, value) {
+    let index = exif_data.value.exif.findIndex((row) => row.key === key)
+    if (index !== -1) {
+      exif_data.value.exif[index]['value'] = value;
+      editing_object.value = {}
+    }
+  }
+
   return {
     web_worker,
     work_flow_state,
@@ -40,6 +49,8 @@ export const usePageStore = defineStore('exif', () => {
     toast_timer,
     file_name,
     image_name,
+    editing_object,
+    update_exif_data,
     remove_exif_data,
     clearTableData,
     setWorker,

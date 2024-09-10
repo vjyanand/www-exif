@@ -65,9 +65,9 @@ function delete_field(field) {
           <td><span style="display: flex;justify-content: space-between;">
               <img width="22" @click="delete_field(`${field.key}`)" src="/assets/img/trash-button.svg" />
 
-              <img style="background-color: grey;" v-if="pageStore.editing_object['value'] === new_value" width="22"
+              <img style="background-color: yellow;" v-if="pageStore.editing_object['value'] === new_value" width="22"
                 src="/assets/img/save-button.svg" />
-              <img v-else width="22" style="background-color: white;" @click="update_field(field)"
+              <img v-else width="22" style="background-color: green;" @click="update_field(field)"
                 src="/assets/img/save-button.svg" />
 
               <img width="22" @click="set_editing_field('')" src="/assets/img/cancel-button.svg" />

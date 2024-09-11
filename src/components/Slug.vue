@@ -5,7 +5,7 @@
     </h2>
     <p class="text-lg font-normal text-gray-500 lg:text-xl sm:px-1 dark:text-gray-400">
       Enhanced privacy, most secure and offline Multimedia file metadata tool.
-      <b>Your file never leaves your devicee.</b>
+      <b>Your file never leaves your device.</b>
     </p>
   </div>
 </template>

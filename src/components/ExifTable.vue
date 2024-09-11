@@ -54,7 +54,7 @@ export default {
   },
   data: () => ({
     people: [
-      "c", "d"
+      "cat", "dog"
     ],
   }),
   computed: {

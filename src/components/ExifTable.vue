@@ -2,7 +2,6 @@
 import { usePageStore } from '@/stores/exif'
 import { Tooltip } from 'flowbite';
 import { onMounted, ref } from 'vue';
-import 'vue-select/dist/vue-select.css';
 
 const pageStore = usePageStore()
 const result = pageStore.exif_data
@@ -41,35 +40,9 @@ function delete_field(field) {
 }
 </script>
 
-<script>
-
-import { defineAsyncComponent } from 'vue'
-const vSelect = defineAsyncComponent(() =>
-  import('vue-select')
-)
-
-export default {
-  components: {
-    vSelect
-  },
-  data: () => ({
-    people: [
-      "cat", "dog"
-    ],
-  }),
-  computed: {
-    options: function () {
-      console.log(this.people)
-      return this.people
-    },
-  },
-}
-</script>
-<template>
-  <v-select :options="options"></v-select>
+<template>  
   <table>
     <template v-for="field in exif">
-
       <tr v-bind:data-key="field.key" v-bind:data-type="field.typeName" v-bind:data-raw-value="field.value">
         <td>{{ field.label }}
           <span v-if="field.desc">

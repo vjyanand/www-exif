@@ -4,9 +4,7 @@ import FileSelect from '../components/FileSelect.vue'
 import Slug from '../components/Slug.vue'
 import Cards from '../components/Cards.vue'
 import Actions from '../components/Actions.vue'
-//import ExifTable from '../components/ExifTable.vue'
-//const ExifTable = () => import('../components/ExifTable.vue')
-const worker = new Worker(new URL('../worker.js?f', import.meta.url))
+const worker = new Worker(new URL('../worker.js?b', import.meta.url))
 const pageStore = usePageStore()
 pageStore.setWorker(worker)
 

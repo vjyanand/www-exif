@@ -1,4 +1,4 @@
-importScripts('/assets/exif-wasm.js?f');
+importScripts('/assets/exif-wasm.js?b');
 
 let exif_parser = null
 
@@ -7,6 +7,9 @@ onmessage = async function (e) {
   switch (action) {
     case 'file':
       await exif_process(e.data.file)
+      break;
+    case 'add':
+      await exif_add(e.data.exif_key, e.data.exif_value, e.data.exif_type)
       break;
     case 'update':
       await exif_update(e.data.exif_key, e.data.exif_value)
@@ -28,6 +31,11 @@ onmessage = async function (e) {
       console.log("default - worker")
   }
 }
+const exif_add = async function (key, value, type) {
+  let result = exif_parser.exif_add(key, value, type)
+  postMessage({ type: 'add', data: result })
+}
+
 const exif_update = async function (key, value) {
   let result = exif_parser.exif_update(key, value)
   postMessage({ type: 'update', data: result })

@@ -40,6 +40,10 @@ export const usePageStore = defineStore('exif', () => {
     }
   }
 
+  function add_exif_data(value) {
+    exif_data.value.exif.push(value)
+  }
+
   return {
     web_worker,
     work_flow_state,
@@ -50,6 +54,7 @@ export const usePageStore = defineStore('exif', () => {
     file_name,
     image_name,
     editing_object,
+    add_exif_data,
     update_exif_data,
     remove_exif_data,
     clearTableData,

@@ -12,6 +12,7 @@ exif.unshift({ "label": "Mime", "value": result["mime"], "key": "mime", "typeNam
 exif.unshift({ "label": "Pixel Height", "value": result["height"], "key": "pixel_height", "typeName": "" })
 exif.unshift({ "label": "Pixel Width", "value": result["width"], "key": "pixel_width", "typeName": "" })
 exif.unshift({ "label": "Byte Order", "value": (result["byte_order"] === 1 ? "littleEndian" : "bigEndian"), "key": "byte_order", "typeName": "" })
+
 onMounted(() => {
   let tooltips = document.getElementsByClassName("tooltip")
   const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
@@ -38,9 +39,9 @@ function delete_field(field) {
   console.log("Deleting - delete_field")
   pageStore.postMessage({ type: "delete", exif_key: field })
 }
-</script>
 
-<template>  
+</script>
+<template>
   <table>
     <template v-for="field in exif">
       <tr v-bind:data-key="field.key" v-bind:data-type="field.typeName" v-bind:data-raw-value="field.value">
@@ -54,6 +55,7 @@ function delete_field(field) {
             <div class="tooltip-arrow" data-popper-arrow=""></div>
           </span>
         </td>
+
         <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
           <td>
             <input type="text" v-bind:placeholder="field.value" v-model="new_value" />

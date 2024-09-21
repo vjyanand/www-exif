@@ -9,17 +9,21 @@ onmessage = async function (e) {
       await exif_process(e.data.file)
       break;
     case 'add':
-      await exif_add(e.data.exif_key, e.data.exif_value, e.data.exif_type)
+      let result = exif_parser.exif_add(e.data.exif_key, e.data.exif_value, e.data.exif_type)
+      postMessage({ type: 'add', data: result })
       break;
     case 'update':
-      await exif_update(e.data.exif_key, e.data.exif_value)
+      let result_update = exif_parser.exif_update(e.data.exif_key, e.data.exif_value)
+      postMessage({ type: 'update', data: result_update })
       break;
     case 'delete':
-      await exif_delete(e.data.exif_key)
+      let result_delete = exif_parser.exif_delete(e.data.exif_key)
+      postMessage({ type: 'delete', data: result_delete })
       break;
     case 'delete_all':
       try {
-        await exif_delete_all()
+        let result = exif_parser.exif_delete_all()
+        postMessage({ type: 'delete_all', data: result })
       } catch (e) {
         postMessage({ type: 'delete_all', data: false })
       }
@@ -31,29 +35,10 @@ onmessage = async function (e) {
       console.log("default - worker")
   }
 }
-const exif_add = async function (key, value, type) {
-  let result = exif_parser.exif_add(key, value, type)
-  postMessage({ type: 'add', data: result })
-}
-
-const exif_update = async function (key, value) {
-  let result = exif_parser.exif_update(key, value)
-  postMessage({ type: 'update', data: result })
-}
-
-const exif_delete_all = async function (key) {
-  let result = exif_parser.exif_delete_all()
-  postMessage({ type: 'delete_all', data: result })
-}
 
 const file_download = async function (filename) {
   let result = FS.readFile(filename, { encoding: 'binary' })
   postMessage({ type: 'download', data: result })
-}
-
-const exif_delete = async function (key) {
-  let result = exif_parser.exif_delete(key)
-  postMessage({ type: 'delete', data: result })
 }
 
 const exif_process = async function (file) {

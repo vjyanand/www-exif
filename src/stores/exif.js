@@ -10,18 +10,7 @@ export const usePageStore = defineStore('exif', () => {
   const exif_data = ref(null)
   const toast_timer = ref(null)
   const editing_object = ref(null)
-
-  function setWorker(worker) {
-    web_worker.value = worker
-  }
-
-  function setTableData(data) {
-    exif_data.value = data
-  }
-
-  function clearTableData() {
-    exif_data.value = null
-  }
+  const show_modal = ref(false)
 
   function postMessage(payload) {
     web_worker.value.postMessage(payload)
@@ -46,20 +35,18 @@ export const usePageStore = defineStore('exif', () => {
 
   return {
     web_worker,
-    work_flow_state,
-    worker_initialized,
-    exif_changed,
-    exif_data,
-    toast_timer,
     file_name,
     image_name,
+    worker_initialized,
+    work_flow_state,
+    exif_changed,
+    toast_timer,
     editing_object,
-    add_exif_data,
-    update_exif_data,
+    exif_data,
+    show_modal,
+    postMessage,
     remove_exif_data,
-    clearTableData,
-    setWorker,
-    setTableData,
-    postMessage
+    update_exif_data,
+    add_exif_data,
   }
 })

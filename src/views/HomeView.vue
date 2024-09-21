@@ -120,7 +120,7 @@ const ExifTable = defineAsyncComponent(() =>
 )
 
 const Actions = defineAsyncComponent(() =>
-  import('../components/Actions.vue')
+  import(/* webpackPrefetch: true */ '../components/Actions.vue')
 )
 
 export default {

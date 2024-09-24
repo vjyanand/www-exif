@@ -76,11 +76,7 @@ function delete_field(field) {
             <div class="flex justify-center">
     <!-- Delete button -->
     <img width="22" @click="delete_field(field.key)" src="/assets/img/trash-button.svg" class="mr-2" />
-    <!-- Save button -->
-     <!-- <img style="background-color: yellow;" v-if="pageStore.editing_object['value'] === new_value" width="22"  src="/assets/img/save-button.svg" />
-              <img v-else width="22" style="background-color: green;" @click="update_field(field)"
-                src="/assets/img/save-button.svg" /> -->
-    <!-- Edit button -->
+    
     <img width="22" @click="set_editing_field(field)" src="/assets/img/edit-button.svg" />
   </div>
           </td>

@@ -41,60 +41,6 @@ function delete_field(field) {
 }
 
 </script>
-<!-- <template>
-  <table>
-    <template v-for="field in exif">
-            <tr v-bind:data-key="field.key" v-bind:data-type="field.typeName" v-bind:data-raw-value="field.value">
-        <td>{{ field.label }}
-          <span v-if="field.desc">
-            ⓘ
-          </span>
-          <span v-if="field.desc" role="tooltip"
-            class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-            {{ field.desc }}
-            <div class="tooltip-arrow" data-popper-arrow=""></div>
-          </span>
-        </td>
-
-        <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
-          <td>
-            <input type="text" v-bind:placeholder="field.value" v-model="new_value" />
-          </td>
-          <td><span style="display: flex;justify-content: space-between;">
-              <img width="22" @click="delete_field(`${field.key}`)" src="/assets/img/trash-button.svg" />
-
-              <img style="background-color: yellow;" v-if="pageStore.editing_object['value'] === new_value" width="22"
-                src="/assets/img/save-button.svg" />
-              <img v-else width="22" style="background-color: green;" @click="update_field(field)"
-                src="/assets/img/save-button.svg" />
-
-              <img width="22" @click="set_editing_field('')" src="/assets/img/cancel-button.svg" />
-            </span>
-          </td>
-        </template>
-        <template v-else>
-          <td>{{ field.value }}</td>
-          <td><img width="220" @click="set_editing_field(field)" src="/assets/img/edit-button.svg" /></td>
-        </template>
-      </tr>
-    </template>
-  </table>
-</template> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <template>
   <div class="p-4 overflow-x-auto relative md:mb-12">

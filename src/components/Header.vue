@@ -60,9 +60,9 @@ const closeMobileMenu = () => {
         </svg>
       </button>
 
-      <!-- Mobile menu, show/hide based on menu open state.-->
+      
       <div class="sm:hidden" role="dialog" aria-modal="true" v-if="isMobileMenuOpen">
-        <!-- Background backdrop, show/hide based on slide-over state.  -->
+        
         <div class="fixed inset-0 z-10" @click="closeMobileMenu"></div>
 
         <div

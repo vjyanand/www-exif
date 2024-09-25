@@ -3,20 +3,24 @@ import '../assets/base.css'
 </script>
 
 <template>
-  <footer class="bg-neutral-100 shadow bg-gray-800">
-    <div class="max-w-screen-xl p-4 flex justify-between items-center">
-      <span class="text-sm text-gray-500 text-gray-400">
-        © 2024 <a href="https://iavian.com/" class="hover:underline">Vijay</a>. All Rights Reserved.
-      </span>
-                 <ul class="flex text-sm font-medium text-gray-500 text-gray-400 gap-4">
-        <li class="whitespace-nowrap">
-          <a href="#" class="hover:text-blue-600">Privacy Policy</a>
-        </li>    
-        <li>|</li>    
-        <li>
-          <a href="#" class="hover:text-blue-600">Contact</a>
-        </li>
-      </ul>
+  <footer class="text-center bg-white w-full border-t border-gray-300 py-1 md:h-11">
+    <div class="flex items-center justify-between text-center container mb-0 mx-auto max-w-5xl py-2 px-8">
+      <span class="text-xs text-neutral-400">
+        Copyright © 2024 <a href="https://iavian.com/" class="hover:underline">Vijay Anand.</a>
+      </span>  
+      <ul class="flex text-sm text-blue-900 gap-1">
+  <li class="whitespace-nowrap">
+    <a href="#" class="hover:underline">Terms</a>
+  </li>    
+  <li class="mx-1">|</li>    
+  <li>
+    <a href="#" class="hover:underline">Privacy</a>
+  </li>
+  <li class="mx-1">|</li>
+  <li>
+    <a href="#" class="hover:underline">Help</a>
+  </li>
+</ul>
     </div>
   </footer>
 </template>

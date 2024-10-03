@@ -75,67 +75,54 @@ function delete_field(field) {
 
 <template>
   <div class="p-4 overflow-x-auto relative md:mb-12">
-    <table
-      class="table-auto w-full max-w-5xl mx-auto bg-white shadow-lg rounded-lg"
-    >
+    <table class="table-auto w-full max-w-5xl mx-auto bg-white shadow-lg rounded-lg">
       <thead class="bg-gray-200 text-gray-700 text-sm uppercase leading-normal">
         <tr>
-          <th class="py-3 px-6 text-center font-semibold">Label</th>
+          <th class="py-3 px-6 text-center font-semibold">Exif</th>
           <th class="py-3 px-6 text-center font-semibold">Value</th>
           <th class="py-3 px-6 text-center font-semibold">Actions</th>
         </tr>
       </thead>
       <tbody ref="mtable" class="divide-y divide-gray-200">
-        
-        <tr
-          v-for="field in exif"
-          :key="field.key"
-          :data-key="field.key"
-          :data-type="field.typeName"
-          :data-raw-value="field.value"
-        >
-          <td class="py-3 px-6 text-center">{{ field.label }}</td>
+
+        <tr v-for="field in exif" :key="field.key" :data-key="field.key" :data-type="field.typeName"
+          :data-raw-value="field.value">
+
           <td class="py-3 px-6 text-center">
-            {{ field.value }}
-            
-            <span v-if="field.desc"> ⓘ </span>
-            <span
-              v-if="field.desc"
-              role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-            >
+            {{ field.label }}
+            <span v-if="field.desc">ⓘ</span>
+            <span v-if="field.desc" role="tooltip"
+              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
               {{ field.desc }}
               <div class="tooltip-arrow" data-popper-arrow=""></div>
             </span>
-
-            <template
-              v-if="
-                pageStore.editing_object &&
-                field.key === pageStore.editing_object['key']
-              "
-            >
-              <input
-                type="text"
-                :placeholder="field.value"
-                v-model="new_value"
-              />
-            </template>
           </td>
+
+          <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
+            <td class="px-6 text-center">
+              <input class="h-8" type="text" :placeholder="field.value" v-model="new_value" />
+            </td>
+          </template>
+          <template v-else>
+            <td class="py-3 px-6 text-center">{{ field.value }}</td>
+          </template>
+
           <td class="py-3 px-6 text-center">
             <div class="flex justify-center">
-              
-              <img
-                width="22"
-                @click="delete_field(field.key)"
-                src="/assets/img/trash-button.svg"
-                class="mr-2"
-              />
+              <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
 
-              <img
-                width="22"
-                @click="set_editing_field(field)"
-                src="/assets/img/edit-button.svg"
-              />
+                <img width="22" v-if="pageStore.editing_object['value'] === new_value" class="bg-slate-400 mr-2"
+                  src="/assets/img/save-button.svg" />
+
+                <img width="22" v-else class="bg-slate-50 mr-2" @click="update_field(field)"
+                  src="/assets/img/save-button.svg" />
+
+                <img width="22" @click="set_editing_field('')" src="/assets/img/cancel-button.svg" />
+              </template>
+              <template v-else>
+                <img width="22" @click="delete_field(field.key)" src="/assets/img/trash-button.svg" class="mr-2" />
+                <img width="22" @click="set_editing_field(field)" src="/assets/img/edit-button.svg" />
+              </template>
             </div>
           </td>
         </tr>

@@ -7,6 +7,7 @@ const show_add_exif = ref(false)
 const cancelTable = (e) => {
   pageStore.work_flow_state = 'LANDING'
   pageStore.exif_changed = false
+  pageStore.editing_object = null
 }
 
 function download_file(e) {
@@ -39,24 +40,25 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-center container w-full mx-auto py-4 px-2 space-x-6">
-    <button type="button" @click="cancelTable()"
-      class="w-32 text-white bg-gray-700 hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+  <div class="flex justify-center container mx-auto py-4 px-2 text-sm space-x-6">
+
+    <button type="button" v-on:click="cancelTable"
+      class="w-32 text-white bg-gray-700 hover:bg-gray-800 font-medium rounded-lg  py-2.5">
       Cancel
     </button>
 
     <button type="button" v-on:click="delete_all_exif"
-      class="w-32 text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+      class="w-32 text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg py-2.5">
       Remove Exifs
     </button>
 
     <button type="button" v-on:click="showModal"
-      class="w-32 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+      class="w-32 text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg py-2.5">
       Add Exif
     </button>
 
     <button type="button" v-on:click="download_file" v-if="pageStore.exif_changed"
-      class="w-32 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      class="w-32 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5  ">
       Download
     </button>
   </div>

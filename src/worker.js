@@ -1,4 +1,4 @@
-importScripts('/assets/exif-wasm.js?b');
+importScripts('/assets/exif-wasm.js?c1');
 
 let exif_parser = null
 

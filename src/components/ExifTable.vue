@@ -7,32 +7,6 @@ const pageStore = usePageStore();
 const result = pageStore.exif_data;
 const new_value = ref(null);
 
-let exif = result["exif"];
-exif.unshift({
-  label: "Mime",
-  value: result["mime"],
-  key: "mime",
-  typeName: "",
-});
-exif.unshift({
-  label: "Pixel Height",
-  value: result["height"],
-  key: "pixel_height",
-  typeName: "",
-});
-exif.unshift({
-  label: "Pixel Width",
-  value: result["width"],
-  key: "pixel_width",
-  typeName: "",
-});
-exif.unshift({
-  label: "Byte Order",
-  value: result["byte_order"] === 1 ? "littleEndian" : "bigEndian",
-  key: "byte_order",
-  typeName: "",
-});
-
 onMounted(() => {
   let tooltips = document.getElementsByClassName("tooltip");
   const isTouch =
@@ -85,7 +59,7 @@ function delete_field(field) {
       </thead>
       <tbody ref="mtable" class="divide-y divide-gray-200">
 
-        <tr v-for="field in exif" :key="field.key" :data-key="field.key" :data-type="field.typeName"
+        <tr v-for="field in result['exif']" :key="field.key" :data-key="field.key" :data-type="field.typeName"
           :data-raw-value="field.value" class="odd:bg-white even:bg-gray-50">
 
           <td class="py-3 px-6 text-center">
@@ -108,7 +82,7 @@ function delete_field(field) {
           </template>
 
           <td class="py-3 px-6 text-center">
-            <div class="flex justify-center">
+            <div v-if="!field.readonly" class="flex justify-center">
               <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
 
                 <img width="22" v-if="pageStore.editing_object['value'] === new_value" class="bg-slate-400 mr-2"

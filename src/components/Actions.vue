@@ -57,8 +57,9 @@ export default {
       Add Exif
     </button>
 
-    <button type="button" v-on:click="download_file" v-if="pageStore.exif_changed"
-      class="w-32 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5  ">
+    <button type="button"
+      :class="[pageStore.exif_changed ? 'hover:bg-blue-800' : 'opacity-50 cursor-not-allowed', 'w-32 text-white bg-blue-700 font-medium rounded-lg py-2.5']"
+      v-on:click="download_file">
       Download
     </button>
   </div>

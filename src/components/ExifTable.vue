@@ -86,7 +86,7 @@ function delete_field(field) {
       <tbody ref="mtable" class="divide-y divide-gray-200">
 
         <tr v-for="field in exif" :key="field.key" :data-key="field.key" :data-type="field.typeName"
-          :data-raw-value="field.value">
+          :data-raw-value="field.value" class="odd:bg-white even:bg-gray-50">
 
           <td class="py-3 px-6 text-center">
             {{ field.label }}
@@ -99,8 +99,8 @@ function delete_field(field) {
           </td>
 
           <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
-            <td class="px-6 text-center">
-              <input class="h-8" type="text" :placeholder="field.value" v-model="new_value" />
+            <td class="py-3 flex justify-center">
+              <input class="h-12 placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 text-start border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" :placeholder="field.value" v-model="new_value" />
             </td>
           </template>
           <template v-else>

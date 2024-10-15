@@ -60,7 +60,7 @@ function preventDefaults(e) {
         </p>
         <p class="text-xs text-gray-500 dark:text-gray-400 md:text-xs lg:text-xs xl:text-xs 2xl:text-xs
           xs:text-xxs sm:text-xxs">
-          SVG, PNG, JPG or GIF
+          JPG, PNG or GIF
         </p>
       </div>
 

@@ -3,9 +3,9 @@
       <h1 class="font-medium text-xl">Terms and Conditions</h1>
       <p><small>Last updated: 2023 Dec 06</small></p>
       <p>1. <b>Introduction</b></p>
-      <p>Welcome to <b>PDF Table Convert</b> (“Company”, “we”, “our”, “us”)!</p>
+      <p>Welcome to <b>Exif Tool</b> (“Company”, “we”, “our”, “us”)!</p>
       <p>These Terms of Service (“Terms”, “Terms of Service”) govern your use of our website located at
-          <b>https://pdf.iavian.net/</b> (together or individually “Service”) operated by <b>PDF Table Convert</b>.
+          <b>https://exif.iavian.net/</b> (together or individually “Service”) operated by <b>Exif Tool</b>.
       </p>
       <p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose
           information that results from your use of our web pages.</p>
@@ -38,28 +38,28 @@
           on a recurring and periodic basis ("Billing Cycle"). Billing cycles will be set depending on the type of
           subscription plan you select when purchasing a Subscription.</p>
       <p>At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions
-          unless you cancel it or PDF Table Convert cancels it. You may cancel your Subscription renewal either
+          unless you cancel it or Exif Tool cancels it. You may cancel your Subscription renewal either
           through your online account management page or by contacting help@pdftableconvert.com</p>
-      <p>A valid payment method is required to process the payment for your subscription. You shall provide PDF Table Convert with accurate and complete billing information that may include but not limited to full
+      <p>A valid payment method is required to process the payment for your subscription. You shall provide Exif Tool with accurate and complete billing information that may include but not limited to full
           name, address, state, postal or zip code, telephone number, and a valid payment method information. By
-          submitting such payment information, you automatically authorize PDF Table Convert to charge all
+          submitting such payment information, you automatically authorize Exif Tool to charge all
           Subscription fees incurred through your account to any such payment instruments.</p>
-      <p>Should automatic billing fail to occur for any reason, PDF Table Convert reserves the right to
+      <p>Should automatic billing fail to occur for any reason, Exif Tool reserves the right to
           terminate your access to the Service with immediate effect.</p>
       <p>5. <b>Free Trial</b></p>
-      <p>PDF Table Convert may, at its sole discretion, offer a Subscription with a free trial for a limited
+      <p>Exif Tool may, at its sole discretion, offer a Subscription with a free trial for a limited
           period of time ("Free Trial").</p>
       <p>You may be required to enter your billing information in order to sign up for Free Trial.</p>
-      <p>If you do enter your billing information when signing up for Free Trial, you will not be charged by PDF Table Convert until Free Trial has expired. On the last day of Free Trial period, unless you cancelled
+      <p>If you do enter your billing information when signing up for Free Trial, you will not be charged by Exif Tool until Free Trial has expired. On the last day of Free Trial period, unless you cancelled
           your Subscription, you will be automatically charged the applicable Subscription fees for the type of
           Subscription you have selected.</p>
-      <p>At any time and without notice, PDF Table Convert reserves the right to (i) modify Terms of Service of
+      <p>At any time and without notice, Exif Tool reserves the right to (i) modify Terms of Service of
           Free Trial offer, or (ii) cancel such Free Trial offer.</p>
       <p>6. <b>Fee Changes</b></p>
-      <p>PDF Table Convert, in its sole discretion and at any time, may modify Subscription fees for the
+      <p>Exif Tool, in its sole discretion and at any time, may modify Subscription fees for the
           Subscriptions. Any Subscription fee change will become effective at the end of the then-current Billing
           Cycle.</p>
-      <p>PDF Table Convert will provide you with a reasonable prior notice of any change in Subscription fees
+      <p>Exif Tool will provide you with a reasonable prior notice of any change in Subscription fees
           to give you an opportunity to terminate your Subscription before such change becomes effective.</p>
       <p>Your continued use of Service after Subscription fee change comes into effect constitutes your agreement to
           pay the modified Subscription fee amount.</p>
@@ -77,8 +77,7 @@
       <p>You retain any and all of your rights to any Content you submit, post or display on or through Service and
           you are responsible for protecting those rights. We take no responsibility and assume no liability for
           Content you or any third party posts on or through Service.</p>
-      <p>PDF documents uploaded to PDF Table Convert persist on our servers for 24 hours. After 24 hours they
-          are deleted. We do not forward user uploaded documents to any third parties.</p>
+      <p>Image documents never get uploaded to our servers</p>
       <p>9. <b>Prohibited Uses</b></p>
       <p>You may use Service only for lawful purposes and in accordance with Terms. You agree not to use Service:</p>
       <p>0.1. In any way that violates any applicable national or international law or regulation.</p>
@@ -132,9 +131,9 @@
           sole discretion.</p>
       <p>13. <b>Intellectual Property</b></p>
       <p>Service and its original content (excluding Content provided by users), features and functionality are and
-          will remain the exclusive property of PDF Table Convert and its licensors. Service is protected by
+          will remain the exclusive property of Exif Tool and its licensors. Service is protected by
           copyright, trademark, and other laws of and foreign countries. Our trademarks may not be used in connection
-          with any product or service without the prior written consent of PDF Table Convert.</p>
+          with any product or service without the prior written consent of Exif Tool.</p>
       <p>14. <b>Copyright Policy</b></p>
       <p>We respect the intellectual property rights of others. It is our policy to respond to any claim that Content
           posted on Service infringes on the copyright or other intellectual property rights (“Infringement”) of any
@@ -174,8 +173,8 @@
           right to use (including copy, modify, create derivative works, publish, distribute and commercialize)
           Feedback in any manner and for any purpose.</p>
       <p>17. <b>Links To Other Web Sites</b></p>
-      <p>Our Service may contain links to third party web sites or services that are not owned or controlled by PDF Table Convert.</p>
-      <p>PDF Table Convert has no control over, and assumes no responsibility for the content, privacy
+      <p>Our Service may contain links to third party web sites or services that are not owned or controlled by Exif Tool.</p>
+      <p>Exif Tool has no control over, and assumes no responsibility for the content, privacy
           policies, or practices of any third party web sites or services. We do not warrant the offerings of any of
           these entities/individuals or their websites.</p>
       <p>YOU ACKNOWLEDGE AND AGREE THAT COMPANY SHALL NOT BE RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY

@@ -64,7 +64,6 @@ function preventDefaults(e) {
         </p>
       </div>
 
-
       <input id="file_picker" type="file" class="hidden" />
     </label>
 

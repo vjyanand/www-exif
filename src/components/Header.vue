@@ -5,7 +5,8 @@ import { ref } from 'vue'
 const links = [
   { to: '/', text: 'Home' },
   { to: '/blog', text: 'Blog' },
-  { to: '/help', text: 'Help' }
+  { to: '/help', text: 'Help' },
+  { to: '/pdf', text: 'PDF Table Convert' }
 ]
 const isMobileMenuOpen = ref(false)
 const toggleMobileMenu = () => {

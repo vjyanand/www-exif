@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'terms',
       component: () => import('../views/Terms.vue')
     },
+    {
+      path: '/pdf',
+      name: 'pdf',
+      beforeEnter() {location.href = 'https://pdftableconvert.com'}
+    },
   ]
 })
 

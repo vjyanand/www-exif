@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/pdf',
       name: 'pdf',
-      beforeEnter() {location.href = 'https://pdftableconvert.com'}
+      beforeEnter() { location.href = 'https://pdftableconvert.com' }
     },
   ]
 })

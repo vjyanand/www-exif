@@ -73,12 +73,12 @@ function delete_field(field) {
           </td>
 
           <template v-if="pageStore.editing_object && field.key === pageStore.editing_object['key']">
-            <td class="py-3 flex justify-center">
-              <input class="h-12 placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 text-start border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" :placeholder="field.value" v-model="new_value" />
+            <td class="py-2 px-3 flex justify-center">
+              <input class="h-8 placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 text-start border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" :placeholder="field.value" v-model="new_value" />
             </td>
           </template>
           <template v-else>
-            <td class="py-3 px-6 text-center">{{ field.value }}</td>
+            <td class="py-3 text-center">{{ field.value }}</td>
           </template>
 
           <td class="py-3 px-6 text-center">

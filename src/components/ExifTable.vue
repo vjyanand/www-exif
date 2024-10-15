@@ -52,9 +52,9 @@ function delete_field(field) {
     <table class="table-auto w-full max-w-5xl mx-auto bg-white shadow-lg rounded-lg">
       <thead class="bg-gray-200 text-gray-700 text-sm uppercase leading-normal">
         <tr>
-          <th class="py-3 px-6 text-center font-semibold">Exif</th>
-          <th class="py-3 px-6 text-center font-semibold">Value</th>
-          <th class="py-3 px-6 text-center font-semibold">Actions</th>
+          <th class="py-3 px-4 text-start font-semibold">Exif</th>
+          <th class="py-3 text-start font-semibold">Value</th>
+          <th class="py-3 px-4 text-end font-semibold">Actions</th>
         </tr>
       </thead>
       <tbody ref="mtable" class="divide-y divide-gray-200">

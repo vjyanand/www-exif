@@ -12,12 +12,12 @@
       <p>Your agreement with us includes these Terms and our Privacy Policy (“Agreements”). You acknowledge that you
           have read and understood Agreements, and agree to be bound of them.</p>
       <p>If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let
-          us know by emailing at <b>help@pdftableconvert.com</b> so we can try to find a solution. These Terms
+          us know by emailing at <b>exif@pdftableconvert.com</b> so we can try to find a solution. These Terms
           apply to all visitors, users and others who wish to access or use Service.</p>
       <p>2. <b>Communications</b></p>
       <p>By using our Service, you agree to subscribe to newsletters, marketing or promotional materials and other
           information we may send. However, you may opt out of receiving any, or all, of these communications from us
-          by following the unsubscribe link or by emailing at help@pdftableconvert.com.</p>
+          by following the unsubscribe link or by emailing at exif@pdftableconvert.com.</p>
       <p>3. <b>Purchases</b></p>
       <p>If you wish to purchase any product or service made available through Service (“Purchase”), you may be asked
           to supply certain information relevant to your Purchase including but not limited to, your credit or debit
@@ -39,7 +39,7 @@
           subscription plan you select when purchasing a Subscription.</p>
       <p>At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions
           unless you cancel it or Exif Tool cancels it. You may cancel your Subscription renewal either
-          through your online account management page or by contacting help@pdftableconvert.com</p>
+          through your online account management page or by contacting exif@pdftableconvert.com</p>
       <p>A valid payment method is required to process the payment for your subscription. You shall provide Exif Tool with accurate and complete billing information that may include but not limited to full
           name, address, state, postal or zip code, telephone number, and a valid payment method information. By
           submitting such payment information, you automatically authorize Exif Tool to charge all
@@ -140,7 +140,7 @@
           person or entity.</p>
       <p>If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has
           been copied in a way that constitutes copyright infringement, please submit your claim via email to
-          help@pdftableconvert.com, with the subject line: “Copyright Infringement” and include in your claim
+          exif@pdftableconvert.com, with the subject line: “Copyright Infringement” and include in your claim
           a detailed description of the alleged Infringement as detailed below, under “DMCA Notice and Procedure for
           Copyright Infringement Claims”</p>
       <p>You may be held accountable for damages (including costs and attorneys’ fees) for misrepresentation or
@@ -159,9 +159,9 @@
           copyright owner, its agent, or the law;</p>
       <p>0.6. a statement by you, made under penalty of perjury, that the above information in your notice is accurate
           and that you are the copyright owner or authorized to act on the copyright owner’s behalf.</p>
-      <p>You can contact our Copyright Agent via email at help@pdftableconvert.com.</p>
+      <p>You can contact our Copyright Agent via email at exif@pdftableconvert.com.</p>
       <p>16. <b>Error Reporting and Feedback</b></p>
-      <p>You may provide us either directly at help@pdftableconvert.com or via third party sites and tools
+      <p>You may provide us either directly at exif@pdftableconvert.com or via third party sites and tools
           with information and feedback concerning errors, suggestions for improvements, ideas, problems, complaints,
           and other matters related to our Service (“Feedback”). You acknowledge and agree that: (i) you shall not
           retain, acquire or assert any intellectual property right or other right, title or interest in or to the
@@ -251,7 +251,7 @@
           AND AGREE TO BE BOUND BY THEM.</p>
       <p>26. <b>Contact Us</b></p>
       <p>Please send your feedback, comments, requests for technical support by email:
-          <b>help@pdftableconvert.com</b>.
+          <b>exif@pdftableconvert.com</b>.
       </p>
   </div>
 </template>

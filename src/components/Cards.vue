@@ -12,17 +12,18 @@
       <img class="h-28 filter-blue" src="/assets/img/offline.svg" alt="offline_logo">
       <h2 class="text-xl font-bold my-2">Offline</h2>
       <p class="font-inter text-md text-gray-700 mb-2 text-center">
-        PDFs stay on your device for faster, secure conversion with no risk of data leakage, prioritizing the privacy of sensitive information.
+        Files stay on your device for faster, secure conversion with no risk of data leakage, prioritizing the privacy of sensitive information.
       </p>
     </div>
 
-    <div class="container flex flex-col items-center p-2 w-full md:w-50 md:h-50 rounded-md">
+    <div class="container flex flex-col items-center p-2">
       <img class="h-28 filter-blue" src="/assets/img/accurate.svg" alt="accurate_logo">
-      <h2 class="text-xl font-bold my-2">Accurate</h2>
+      <h2 class="text-xl font-bold my-2">Easy</h2>
       <p class="font-inter text-md text-gray-700 mb-2 text-center">
-        We're continually improving our algorithms. If a file doesn't convert to your expectations, <a href="mailto:help@pdftableconvert.com">email us</a> and we'll fix it.
+        No need to download software. Readily available tool to add, edit or remove exif metadata from anywhere at any device.
       </p>
     </div>
+
   </div>
 </template>
 <style scoped>

@@ -4,9 +4,7 @@ import { ref } from 'vue'
 
 const links = [
   { to: '/', text: 'Home' },
-  { to: '/blog', text: 'Blog' },
   { to: '/help', text: 'Help' },
-  { to: '/pdf', text: 'PDF Table Convert' }
 ]
 const isMobileMenuOpen = ref(false)
 const toggleMobileMenu = () => {
@@ -41,6 +39,10 @@ const closeMobileMenu = () => {
             class="font-inter text-black hover:text-blue-600 mr-4">
             {{ link.text }}
           </RouterLink>
+          <a class="font-inter text-black hover:text-blue-600" target="_blank"
+              href="https://github.com/vjyanand/wasm-exif">
+              GitHub
+            </a>
           <a class="font-inter text-black hover:text-blue-600" href="mailto:help@pdftableconvert.com">
             Contact
           </a>
@@ -77,14 +79,14 @@ const closeMobileMenu = () => {
               to="/" @click="closeMobileMenu">
               Home
             </RouterLink>
-            <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-blue-700"
-              href="/blog">
-              Blog
-            </a>
             <RouterLink
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-blue-700"
               to="/help" @click="closeMobileMenu">Help</RouterLink>
-
+            
+            <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-blue-700"
+              href="https://github.com/vjyanand/wasm-exif" target="_blank">
+              GitHub
+            </a>
             <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-blue-700"
               href="mailto:help@exif.iavian.net">
               Contact

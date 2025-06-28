@@ -4,7 +4,7 @@
       <span class="emo">Privacy first, Secure, Offline </span>Multimedia file metadata tool
     </h1>
     <h2 class="my-2 text-lg font-normal text-gray-500 lg:text-xl sm:px-1">
-      Enhanced privacy, most secure and offline Multimedia file metadata tool. <b>Your Files Stay on Your Device!</b>
+      Enhanced privacy, most secure and offline Multimedia file metadata tool. <b>Your files stay on your Device!</b>
     </h2>
   </div>
 </template>

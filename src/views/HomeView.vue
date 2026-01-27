@@ -4,7 +4,7 @@ import Slug from '../components/Slug.vue'
 import Cards from '../components/Cards.vue'
 
 import { usePageStore } from '@/stores/exif'
-const worker = new Worker(new URL('../worker.js?b', import.meta.url))
+const worker = new Worker(new URL('../worker.js?c1', import.meta.url))
 const pageStore = usePageStore()
 pageStore.web_worker = worker
 
@@ -18,7 +18,8 @@ pageStore.web_worker.onmessage = function (e) {
     case 'exif':
       pageStore.work_flow_state = 'LIST'
       let exif_data = JSON.parse(result.data)
-      pageStore.exif_data = exif_data
+      pageStore.exif_data = exif_data;
+      pageStore.add_additional_exif(exif_data)
       pageStore.image_name = result.image_name
       break
     case 'add':
@@ -42,7 +43,6 @@ pageStore.web_worker.onmessage = function (e) {
         }
         pageStore.update_exif_data(result_update['key'], result_update['value']);
       }
-      console.log(result_update)
       break
     case 'delete':
       let payload = JSON.parse(result.data)
@@ -56,11 +56,16 @@ pageStore.web_worker.onmessage = function (e) {
       break
     case 'delete_all':
       let payload_delete_all = JSON.parse(result.data)
-      if (pageStore.exif_changed === false && payload_delete_all === true) {
-        pageStore.exif_changed = true
-        showToast("All exif metadata removed")
+      if(payload_delete_all === false) {
+        showToast("Failed to remove")
+        return
       }
-      console.log(payload_delete_all)
+      showToast("All exif metadata removed")
+      if (pageStore.exif_changed === false) {
+        pageStore.exif_changed = true
+      }
+      pageStore.update_remove_all(JSON.parse(payload_delete_all.value))
+      console.log(payload_delete_all.value)
       break
     case 'download':
       let download_file_name = "mod_" + pageStore.file_name

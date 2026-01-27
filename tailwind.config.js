@@ -6,7 +6,12 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "playfair": ['Playfair Display', 'serif'],
+        "lato": ['Lato', 'sans-serif']
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')

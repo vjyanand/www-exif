@@ -33,6 +33,42 @@ export const usePageStore = defineStore('exif', () => {
     exif_data.value.exif.push(value)
   }
 
+  function update_remove_all(value) {
+    exif_data.value.exif.splice(0, exif_data.value.exif.length)
+    add_additional_exif(value)
+  }
+
+  function add_additional_exif(value) {
+    exif_data.value.exif.unshift({
+      label: "Mime",
+      value: value["mime"],
+      key: "mime",
+      typeName: "",
+      readonly: true,
+    });
+    exif_data.value.exif.unshift({
+      label: "Pixel Height",
+      value: value["height"],
+      key: "pixel_height",
+      typeName: "",
+      readonly: true,
+    });
+    exif_data.value.exif.unshift({
+      label: "Pixel Width",
+      value: value["width"],
+      key: "pixel_width",
+      typeName: "",
+      readonly: true,
+    });
+    exif_data.value.exif.unshift({
+      label: "Byte Order",
+      value: value["byte_order"] === 1 ? "littleEndian" : "bigEndian",
+      key: "byte_order",
+      typeName: "",
+      readonly: true,
+    });
+  }
+
   return {
     web_worker,
     file_name,
@@ -48,5 +84,7 @@ export const usePageStore = defineStore('exif', () => {
     remove_exif_data,
     update_exif_data,
     add_exif_data,
+    add_additional_exif,
+    update_remove_all,
   }
 })
